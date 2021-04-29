@@ -30,6 +30,7 @@ namespace RakBank\Simplify;
 
 use RakBank\Simplify\SimplifyFiles\SimplifyConstants;
 use RakBank\Simplify\SimplifyFiles\SimplifyAuthorization;
+use RakBank\Simplify\SimplifyFiles\SimplifyPayment;
 
 // require_once(dirname(__FILE__) . '/SimplifyFiles/Constants.php');
 
@@ -62,7 +63,11 @@ class Simplify
     public static $userAgent = null;
 
     public static function authorization($data){
-        SimplifyAuthorization::createAuthorization($data);
+        return SimplifyAuthorization::createAuthorization($data);
+    }
+
+    public static function createPayment($data){
+        return SimplifyPayment::createPayment($data);
     }
 
 }
@@ -85,7 +90,7 @@ require_once(dirname(__FILE__) . '/SimplifyFiles/FraudCheck.php');
 require_once(dirname(__FILE__) . '/SimplifyFiles/Invoice.php');
 require_once(dirname(__FILE__) . '/SimplifyFiles/InvoiceItem.php');
 require_once(dirname(__FILE__) . '/SimplifyFiles/Tax.php');
-require_once(dirname(__FILE__) . '/SimplifyFiles/SimplifyPayment.php');
+// require_once(dirname(__FILE__) . '/SimplifyFiles/SimplifyPayment.php');
 require_once(dirname(__FILE__) . '/SimplifyFiles/Plan.php');
 require_once(dirname(__FILE__) . '/SimplifyFiles/Refund.php');
 require_once(dirname(__FILE__) . '/SimplifyFiles/Subscription.php');
