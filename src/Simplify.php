@@ -29,6 +29,7 @@
 namespace RakBank\Simplify;
 
 use RakBank\Simplify\SimplifyFiles\SimplifyConstants;
+use RakBank\Simplify\SimplifyFiles\SimplifyAuthorization;
 
 // require_once(dirname(__FILE__) . '/SimplifyFiles/Constants.php');
 
@@ -60,6 +61,10 @@ class Simplify
      */
     public static $userAgent = null;
 
+    public static function authorization($data){
+        SimplifyAuthorization::createAuthorization($data);
+    }
+
 }
 
 require_once(dirname(__FILE__) . '/SimplifyFiles/SimplifyObject.php');
@@ -69,7 +74,7 @@ require_once(dirname(__FILE__) . '/SimplifyFiles/SimplifyPaymentsApi.php');
 require_once(dirname(__FILE__) . '/SimplifyFiles/Exceptions.php');
 require_once(dirname(__FILE__) . '/SimplifyFiles/SimplifyHttp.php');
 require_once(dirname(__FILE__) . '/SimplifyFiles/ResourceList.php');
-require_once(dirname(__FILE__) . '/SimplifyFiles/Authorization.php');
+// require_once(dirname(__FILE__) . '/SimplifyFiles/Simplify_Authorization.php');
 require_once(dirname(__FILE__) . '/SimplifyFiles/CardToken.php');
 require_once(dirname(__FILE__) . '/SimplifyFiles/Chargeback.php');
 require_once(dirname(__FILE__) . '/SimplifyFiles/Coupon.php');
