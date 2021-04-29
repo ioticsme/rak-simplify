@@ -1,0 +1,25 @@
+{
+    "name": "rakbank/simplify",
+    "description": "RakBank Simplify Laravel Package",
+    "type": "library",
+    "keywords": ["RakBank","Simplify payment gateway"],
+    "license": "MIT",
+    "homepage": "https://github.com/ebrunkn/rakbank-simplify",
+    "authors": [
+        {
+            "name": "Ebrahim Nayakkan",
+            "email": "ebru.nkn@gmail.com",
+            "homepage": "https://www.linkedin.com/in/ebrahimnp/",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "RakBank\\Simplify\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=7.2.0"
+    }
+}
