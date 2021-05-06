@@ -30,7 +30,12 @@ namespace RakBank\Simplify;
 
 use RakBank\Simplify\SimplifyFiles\SimplifyConstants;
 use RakBank\Simplify\SimplifyFiles\SimplifyAuthorization;
+use RakBank\Simplify\SimplifyFiles\SimplifyCoupon;
+use RakBank\Simplify\SimplifyFiles\SimplifyCustomer;
 use RakBank\Simplify\SimplifyFiles\SimplifyPayment;
+use RakBank\Simplify\SimplifyFiles\SimplifyPlan;
+use RakBank\Simplify\SimplifyFiles\SimplifyRefund;
+use RakBank\Simplify\SimplifyFiles\SimplifySubscription;
 
 // require_once(dirname(__FILE__) . '/SimplifyFiles/Constants.php');
 
@@ -62,10 +67,42 @@ class Simplify
      */
     public static $userAgent = null;
 
+    // Charging a card
+    public static function chargingCard($data){
+        return SimplifyPayment::createPayment($data);
+    }
+
+    // Recurring Payments
+    public static function recurringPayment($data){
+        return SimplifyPlan::createPlan($data);
+    }
+
+    // Create a customer and subscribe to a plan
+    public static function createCustomer($data){
+        return SimplifyCustomer::createCustomer($data);
+    }
+
+    // Create a coupon
+    public static function createCoupon($data){
+        return SimplifyCoupon::createCoupon($data);
+    }
+
+    // Applying coupon to a subscription
+    public static function createSubscription($data){
+        return SimplifySubscription::createSubscription($data);
+    }
+
+    // Refunding a Payment
+    public static function refundPayment($data){
+        return SimplifyRefund::createRefund($data);
+    }
+
+    // Creating authorization
     public static function authorization($data){
         return SimplifyAuthorization::createAuthorization($data);
     }
 
+    // Capturing authorized payment
     public static function createPayment($data){
         return SimplifyPayment::createPayment($data);
     }
@@ -82,8 +119,8 @@ require_once(dirname(__FILE__) . '/SimplifyFiles/ResourceList.php');
 // require_once(dirname(__FILE__) . '/SimplifyFiles/Simplify_Authorization.php');
 require_once(dirname(__FILE__) . '/SimplifyFiles/CardToken.php');
 require_once(dirname(__FILE__) . '/SimplifyFiles/Chargeback.php');
-require_once(dirname(__FILE__) . '/SimplifyFiles/Coupon.php');
-require_once(dirname(__FILE__) . '/SimplifyFiles/Customer.php');
+// require_once(dirname(__FILE__) . '/SimplifyFiles/SimplifyCoupon.php');
+// require_once(dirname(__FILE__) . '/SimplifyFiles/SimplifyCustomer.php');
 require_once(dirname(__FILE__) . '/SimplifyFiles/Deposit.php');
 require_once(dirname(__FILE__) . '/SimplifyFiles/Event.php');
 require_once(dirname(__FILE__) . '/SimplifyFiles/FraudCheck.php');
@@ -91,8 +128,8 @@ require_once(dirname(__FILE__) . '/SimplifyFiles/Invoice.php');
 require_once(dirname(__FILE__) . '/SimplifyFiles/InvoiceItem.php');
 require_once(dirname(__FILE__) . '/SimplifyFiles/Tax.php');
 // require_once(dirname(__FILE__) . '/SimplifyFiles/SimplifyPayment.php');
-require_once(dirname(__FILE__) . '/SimplifyFiles/Plan.php');
-require_once(dirname(__FILE__) . '/SimplifyFiles/Refund.php');
-require_once(dirname(__FILE__) . '/SimplifyFiles/Subscription.php');
+// require_once(dirname(__FILE__) . '/SimplifyFiles/SimplifyPlan.php');
+// require_once(dirname(__FILE__) . '/SimplifyFiles/SimplifyRefund.php');
+// require_once(dirname(__FILE__) . '/SimplifyFiles/SimplifySubscription.php');
 require_once(dirname(__FILE__) . '/SimplifyFiles/TransactionReview.php');
 require_once(dirname(__FILE__) . '/SimplifyFiles/Webhook.php');

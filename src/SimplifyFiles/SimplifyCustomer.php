@@ -25,13 +25,14 @@
  * IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF 
  * SUCH DAMAGE.
  */
+namespace RakBank\Simplify\SimplifyFiles;
 
 use RakBank\Simplify\SimplifyFiles\SimplifyObject;
 use RakBank\Simplify\SimplifyFiles\SimplifyPaymentsApi;
 
-class Simplify_Customer extends SimplifyObject {
+class SimplifyCustomer extends SimplifyObject {
     /**
-     * Creates an Simplify_Customer object
+     * Creates an SimplifyCustomer object
      * @param     array $hash a map of parameters; valid keys are:<dl style="padding-left:10px;">
      *     <dt><tt>card.addressCity</tt></dt>    <dd>City of the cardholder. <strong>required </strong></dd>
      *     <dt><tt>card.addressCountry</tt></dt>    <dd>Country code (ISO-3166-1-alpha-2 code) of residence of the cardholder. <strong>required </strong></dd>
@@ -72,7 +73,7 @@ class Simplify_Customer extends SimplifyObject {
         $args = func_get_args();
         $authentication = SimplifyPaymentsApi::buildAuthenticationObject($authentication, $args, 2);
 
-        $instance = new Simplify_Customer();
+        $instance = new SimplifyCustomer();
         $instance->setAll($hash);
 
         $object = SimplifyPaymentsApi::createObject($instance, $authentication);
@@ -83,7 +84,7 @@ class Simplify_Customer extends SimplifyObject {
 
 
        /**
-        * Deletes an Simplify_Customer object.
+        * Deletes an SimplifyCustomer object.
         *
         * @param     $authentication -  information used for the API call.  If no value is passed the global keys Simplify::public_key and Simplify::private_key are used.  <i>For backwards compatibility the public and private keys may be passed instead of the authentication object.</i>
         */
@@ -99,7 +100,7 @@ class Simplify_Customer extends SimplifyObject {
 
 
        /**
-        * Retrieve Simplify_Customer objects.
+        * Retrieve SimplifyCustomer objects.
         * @param     array criteria a map of parameters; valid keys are:<dl style="padding-left:10px;">
         *     <dt><tt>filter</tt></dt>    <dd><table class="filter_list"><tr><td>filter.id</td><td>Filter by the customer Id</td></tr><tr><td>filter.text</td><td>Can use this to filter by the name, email or reference for the customer</td></tr><tr><td>filter.dateCreatedMin<sup>*</sup></td><td>Filter by the minimum created date you are searching for - Date in UTC millis</td></tr><tr><td>filter.dateCreatedMax<sup>*</sup></td><td>Filter by the maximum created date you are searching for - Date in UTC millis</td></tr></table><br><sup>*</sup>Use dateCreatedMin with dateCreatedMax in the same filter if you want to search between two created dates  </dd>
         *     <dt><tt>max</tt></dt>    <dd>Allows up to a max of 50 list items to return. [min value: 0, max value: 50, default: 20]  </dd>
@@ -115,7 +116,7 @@ class Simplify_Customer extends SimplifyObject {
             $args = func_get_args();
             $authentication = SimplifyPaymentsApi::buildAuthenticationObject($authentication, $args, 2);
 
-            $val = new Simplify_Customer();
+            $val = new SimplifyCustomer();
             $list = SimplifyPaymentsApi::listObject($val, $criteria, $authentication);
 
             return $list;
@@ -123,7 +124,7 @@ class Simplify_Customer extends SimplifyObject {
 
 
         /**
-         * Retrieve a Simplify_Customer object from the API
+         * Retrieve a SimplifyCustomer object from the API
          *
          * @param     string id  the id of the Customer object to retrieve
          * @param     $authentication -  information used for the API call.  If no value is passed the global keys Simplify::public_key and Simplify::private_key are used.  <i>For backwards compatibility the public and private keys may be passed instead of the authentication object.</i>
@@ -134,7 +135,7 @@ class Simplify_Customer extends SimplifyObject {
             $args = func_get_args();
             $authentication = SimplifyPaymentsApi::buildAuthenticationObject($authentication, $args, 2);
 
-            $val = new Simplify_Customer();
+            $val = new SimplifyCustomer();
             $val->id = $id;
 
             $obj = SimplifyPaymentsApi::findObject($val, $authentication);
@@ -144,7 +145,7 @@ class Simplify_Customer extends SimplifyObject {
 
 
         /**
-         * Updates an Simplify_Customer object.
+         * Updates an SimplifyCustomer object.
          *
          * The properties that can be updated:
          * <dl style="padding-left:10px;">
