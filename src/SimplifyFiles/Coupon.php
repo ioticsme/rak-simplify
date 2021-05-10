@@ -25,12 +25,14 @@
  * IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF 
  * SUCH DAMAGE.
  */
-use RakBank\Simplify\SimplifyFiles\SimplifyObject;
-use RakBank\Simplify\SimplifyFiles\SimplifyPaymentsApi;
+namespace Rak\Simplify\SimplifyFiles;
 
-class Simplify_Coupon extends SimplifyObject {
+use Rak\Simplify\SimplifyFiles\SimplifyObject;
+use Rak\Simplify\SimplifyFiles\SimplifyPaymentsApi;
+
+class SimplifyCoupon extends SimplifyObject {
     /**
-     * Creates an Simplify_Coupon object
+     * Creates an SimplifyCoupon object
      * @param     array $hash a map of parameters; valid keys are:<dl style="padding-left:10px;">
      *     <dt><tt>amountOff</tt></dt>    <dd>Amount off of the price of the product in the smallest units of the currency of the merchant. While this field is optional, you must provide either amountOff or percentOff for a coupon. Example: 100 = $1.00 [min value: 1] </dd>
      *     <dt><tt>couponCode</tt></dt>    <dd>Code that identifies the coupon to be used. [min length: 2] <strong>required </strong></dd>
@@ -49,7 +51,7 @@ class Simplify_Coupon extends SimplifyObject {
         $args = func_get_args();
         $authentication = SimplifyPaymentsApi::buildAuthenticationObject($authentication, $args, 2);
 
-        $instance = new Simplify_Coupon();
+        $instance = new SimplifyCoupon();
         $instance->setAll($hash);
 
         $object = SimplifyPaymentsApi::createObject($instance, $authentication);
@@ -60,7 +62,7 @@ class Simplify_Coupon extends SimplifyObject {
 
 
        /**
-        * Deletes an Simplify_Coupon object.
+        * Deletes an SimplifyCoupon object.
         *
         * @param     $authentication -  information used for the API call.  If no value is passed the global keys Simplify::public_key and Simplify::private_key are used.  <i>For backwards compatibility the public and private keys may be passed instead of the authentication object.</i>
         */
@@ -76,7 +78,7 @@ class Simplify_Coupon extends SimplifyObject {
 
 
        /**
-        * Retrieve Simplify_Coupon objects.
+        * Retrieve SimplifyCoupon objects.
         * @param     array criteria a map of parameters; valid keys are:<dl style="padding-left:10px;">
         *     <dt><tt>filter</tt></dt>    <dd><table class="filter_list"><tr><td>filter.id</td><td>Filter by the coupon Id</td></tr><tr><td>filter.text</td><td>Filter by the coupon code</td></tr><tr><td>filter.dateCreatedMin<sup>*</sup></td><td>Filter by the minimum created date you are searching for - Date in UTC millis</td></tr><tr><td>filter.dateCreatedMax<sup>*</sup></td><td>Filter by the maximum created date you are searching for - Date in UTC millis</td></tr><tr><td>filter.startDateMin</td><td>Filter by the minimum coupon start date you are searching for - Date in UTC millis</td></tr><tr><td>filter.startDateMax</td><td>Filter by the maximum coupon start date you are searching for - Date in UTC millis</td></tr><tr><td>filter.endDateMin</td><td>Filter by the minimum coupon end date you are searching for - Date in UTC millis</td></tr><tr><td>filter.endDateMax</td><td>Filter by the maximum coupon end date you are searching for - Date in UTC millis</td></tr></table><br><sup>*</sup>Use dateCreatedMin with dateCreatedMax in the same filter if you want to search between two created dates  </dd>
         *     <dt><tt>max</tt></dt>    <dd>Allows up to a max of 50 list items to return. [min value: 0, max value: 50, default: 20]  </dd>
@@ -92,7 +94,7 @@ class Simplify_Coupon extends SimplifyObject {
             $args = func_get_args();
             $authentication = SimplifyPaymentsApi::buildAuthenticationObject($authentication, $args, 2);
 
-            $val = new Simplify_Coupon();
+            $val = new SimplifyCoupon();
             $list = SimplifyPaymentsApi::listObject($val, $criteria, $authentication);
 
             return $list;
@@ -100,7 +102,7 @@ class Simplify_Coupon extends SimplifyObject {
 
 
         /**
-         * Retrieve a Simplify_Coupon object from the API
+         * Retrieve a SimplifyCoupon object from the API
          *
          * @param     string id  the id of the Coupon object to retrieve
          * @param     $authentication -  information used for the API call.  If no value is passed the global keys Simplify::public_key and Simplify::private_key are used.  <i>For backwards compatibility the public and private keys may be passed instead of the authentication object.</i>
@@ -111,7 +113,7 @@ class Simplify_Coupon extends SimplifyObject {
             $args = func_get_args();
             $authentication = SimplifyPaymentsApi::buildAuthenticationObject($authentication, $args, 2);
 
-            $val = new Simplify_Coupon();
+            $val = new SimplifyCoupon();
             $val->id = $id;
 
             $obj = SimplifyPaymentsApi::findObject($val, $authentication);
@@ -121,7 +123,7 @@ class Simplify_Coupon extends SimplifyObject {
 
 
         /**
-         * Updates an Simplify_Coupon object.
+         * Updates an SimplifyCoupon object.
          *
          * The properties that can be updated:
          * <dl style="padding-left:10px;">

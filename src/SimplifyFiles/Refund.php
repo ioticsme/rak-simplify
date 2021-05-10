@@ -25,13 +25,14 @@
  * IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF 
  * SUCH DAMAGE.
  */
+namespace Rak\Simplify\SimplifyFiles;
 
-use RakBank\Simplify\SimplifyFiles\SimplifyObject;
-use RakBank\Simplify\SimplifyFiles\SimplifyPaymentsApi;
+use Rak\Simplify\SimplifyFiles\SimplifyObject;
+use Rak\Simplify\SimplifyFiles\SimplifyPaymentsApi;
 
-class Simplify_Refund extends SimplifyObject {
+class SimplifyRefund extends SimplifyObject {
     /**
-     * Creates an Simplify_Refund object
+     * Creates an SimplifyRefund object
      * @param     array $hash a map of parameters; valid keys are:<dl style="padding-left:10px;">
      *     <dt><tt>amount</tt></dt>    <dd>Amount of the refund in the smallest unit of your currency. Example: 100 = $1.00 <strong>required </strong></dd>
      *     <dt><tt>payment</tt></dt>    <dd>ID of the payment for the refund </dd>
@@ -48,7 +49,7 @@ class Simplify_Refund extends SimplifyObject {
         $args = func_get_args();
         $authentication = SimplifyPaymentsApi::buildAuthenticationObject($authentication, $args, 2);
 
-        $instance = new Simplify_Refund();
+        $instance = new SimplifyRefund();
         $instance->setAll($hash);
 
         $object = SimplifyPaymentsApi::createObject($instance, $authentication);
@@ -58,7 +59,7 @@ class Simplify_Refund extends SimplifyObject {
 
 
        /**
-        * Retrieve Simplify_Refund objects.
+        * Retrieve SimplifyRefund objects.
         * @param     array criteria a map of parameters; valid keys are:<dl style="padding-left:10px;">
         *     <dt><tt>filter</tt></dt>    <dd><table class="filter_list"><tr><td>filter.id</td><td>Filter by the refund Id</td></tr><tr><td>filter.text</td><td>Filter by the refund description text</td></tr><tr><td>filter.replayId</td><td>Filter by the compoundReplayId</td></tr><tr><td>filter.authCode</td><td>Filter by the authorization code (Not authorization ID)</td></tr><tr><td>filter.amount</td><td>Filter by the refund amount (in the smallest unit of your currency)</td></tr><tr><td>filter.dateCreatedMin<sup>*</sup></td><td>Filter by the minimum created date you are searching for - Date in UTC millis</td></tr><tr><td>filter.dateCreatedMax<sup>*</sup></td><td>Filter by the maximum created date you are searching for - Date in UTC millis</td></tr><tr><td>filter.deposit</td><td>Filter by the deposit id</td></tr><tr><td>filter.q</td><td>You can use this to filter by the Id, the authCode or the amount of the refund</td></tr></table><br><sup>*</sup>Use dateCreatedMin with dateCreatedMax in the same filter if you want to search between two created dates  </dd>
         *     <dt><tt>max</tt></dt>    <dd>Allows up to a max of 50 list items to return. [min value: 0, max value: 50, default: 20]  </dd>
@@ -74,7 +75,7 @@ class Simplify_Refund extends SimplifyObject {
             $args = func_get_args();
             $authentication = SimplifyPaymentsApi::buildAuthenticationObject($authentication, $args, 2);
 
-            $val = new Simplify_Refund();
+            $val = new SimplifyRefund();
             $list = SimplifyPaymentsApi::listObject($val, $criteria, $authentication);
 
             return $list;
@@ -82,7 +83,7 @@ class Simplify_Refund extends SimplifyObject {
 
 
         /**
-         * Retrieve a Simplify_Refund object from the API
+         * Retrieve a SimplifyRefund object from the API
          *
          * @param     string id  the id of the Refund object to retrieve
          * @param     $authentication -  information used for the API call.  If no value is passed the global keys Simplify::public_key and Simplify::private_key are used.  <i>For backwards compatibility the public and private keys may be passed instead of the authentication object.</i>
@@ -93,7 +94,7 @@ class Simplify_Refund extends SimplifyObject {
             $args = func_get_args();
             $authentication = SimplifyPaymentsApi::buildAuthenticationObject($authentication, $args, 2);
 
-            $val = new Simplify_Refund();
+            $val = new SimplifyRefund();
             $val->id = $id;
 
             $obj = SimplifyPaymentsApi::findObject($val, $authentication);

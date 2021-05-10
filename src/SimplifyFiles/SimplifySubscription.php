@@ -25,13 +25,14 @@
  * IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF 
  * SUCH DAMAGE.
  */
+namespace Rak\Simplify\SimplifyFiles;
 
-use RakBank\Simplify\SimplifyFiles\SimplifyObject;
-use RakBank\Simplify\SimplifyFiles\SimplifyPaymentsApi;
+use Rak\Simplify\SimplifyFiles\SimplifyObject;
+use Rak\Simplify\SimplifyFiles\SimplifyPaymentsApi;
 
-class Simplify_Subscription extends SimplifyObject {
+class SimplifySubscription extends SimplifyObject {
     /**
-     * Creates an Simplify_Subscription object
+     * Creates an SimplifySubscription object
      * @param     array $hash a map of parameters; valid keys are:<dl style="padding-left:10px;">
      *     <dt><tt>amount</tt></dt>    <dd>Amount of the payment in the smallest unit of your currency. Example: 100 = $1.00 </dd>
      *     <dt><tt>billingCycle</tt></dt>    <dd>How the plan is billed to the customer. Values must be AUTO (indefinitely until the customer cancels) or FIXED (a fixed number of billing cycles). [default: AUTO] </dd>
@@ -56,7 +57,7 @@ class Simplify_Subscription extends SimplifyObject {
         $args = func_get_args();
         $authentication = SimplifyPaymentsApi::buildAuthenticationObject($authentication, $args, 2);
 
-        $instance = new Simplify_Subscription();
+        $instance = new SimplifySubscription();
         $instance->setAll($hash);
 
         $object = SimplifyPaymentsApi::createObject($instance, $authentication);
@@ -67,7 +68,7 @@ class Simplify_Subscription extends SimplifyObject {
 
 
        /**
-        * Deletes an Simplify_Subscription object.
+        * Deletes an SimplifySubscription object.
         *
         * @param     $authentication -  information used for the API call.  If no value is passed the global keys Simplify::public_key and Simplify::private_key are used.  <i>For backwards compatibility the public and private keys may be passed instead of the authentication object.</i>
         */
@@ -83,7 +84,7 @@ class Simplify_Subscription extends SimplifyObject {
 
 
        /**
-        * Retrieve Simplify_Subscription objects.
+        * Retrieve SimplifySubscription objects.
         * @param     array criteria a map of parameters; valid keys are:<dl style="padding-left:10px;">
         *     <dt><tt>filter</tt></dt>    <dd><table class="filter_list"><tr><td>filter.customer</td><td>Filter by the Id of the customer with the subscription</td></tr><tr><td>filter.plan</td><td>Filter by the Id of the plan linked to the subscription</td></tr><tr><td>filter.dateCreatedMin<sup>*</sup></td><td>Filter by the minimum created date you are searching for - Date in UTC millis</td></tr><tr><td>filter.dateCreatedMax<sup>*</sup></td><td>Filter by the maximum created date you are searching for - Date in UTC millis</td></tr><tr><td>filter.q</td><td>You can use this to filter by the Id, the name or the amount of the subscription</td></tr></table><br><sup>*</sup>Use dateCreatedMin with dateCreatedMax in the same filter if you want to search between two created dates  </dd>
         *     <dt><tt>max</tt></dt>    <dd>Allows up to a max of 50 list items to return. [min value: 0, max value: 50, default: 20]  </dd>
@@ -99,7 +100,7 @@ class Simplify_Subscription extends SimplifyObject {
             $args = func_get_args();
             $authentication = SimplifyPaymentsApi::buildAuthenticationObject($authentication, $args, 2);
 
-            $val = new Simplify_Subscription();
+            $val = new SimplifySubscription();
             $list = SimplifyPaymentsApi::listObject($val, $criteria, $authentication);
 
             return $list;
@@ -107,7 +108,7 @@ class Simplify_Subscription extends SimplifyObject {
 
 
         /**
-         * Retrieve a Simplify_Subscription object from the API
+         * Retrieve a SimplifySubscription object from the API
          *
          * @param     string id  the id of the Subscription object to retrieve
          * @param     $authentication -  information used for the API call.  If no value is passed the global keys Simplify::public_key and Simplify::private_key are used.  <i>For backwards compatibility the public and private keys may be passed instead of the authentication object.</i>
@@ -118,7 +119,7 @@ class Simplify_Subscription extends SimplifyObject {
             $args = func_get_args();
             $authentication = SimplifyPaymentsApi::buildAuthenticationObject($authentication, $args, 2);
 
-            $val = new Simplify_Subscription();
+            $val = new SimplifySubscription();
             $val->id = $id;
 
             $obj = SimplifyPaymentsApi::findObject($val, $authentication);
@@ -128,7 +129,7 @@ class Simplify_Subscription extends SimplifyObject {
 
 
         /**
-         * Updates an Simplify_Subscription object.
+         * Updates an SimplifySubscription object.
          *
          * The properties that can be updated:
          * <dl style="padding-left:10px;">

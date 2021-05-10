@@ -25,13 +25,14 @@
  * IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF 
  * SUCH DAMAGE.
  */
+namespace Rak\Simplify\SimplifyFiles;
 
-use RakBank\Simplify\SimplifyFiles\SimplifyObject;
-use RakBank\Simplify\SimplifyFiles\SimplifyPaymentsApi;
+use Rak\Simplify\SimplifyFiles\SimplifyObject;
+use Rak\Simplify\SimplifyFiles\SimplifyPaymentsApi;
 
-class Simplify_Plan extends SimplifyObject {
+class SimplifyPlan extends SimplifyObject {
     /**
-     * Creates an Simplify_Plan object
+     * Creates an SimplifyPlan object
      * @param     array $hash a map of parameters; valid keys are:<dl style="padding-left:10px;">
      *     <dt><tt>amount</tt></dt>    <dd>Amount of payment for the plan in the smallest unit of your currency. Example: 100 = $1.00 <strong>required </strong></dd>
      *     <dt><tt>billingCycle</tt></dt>    <dd>How the plan is billed to the customer. Values must be AUTO (indefinitely until the customer cancels) or FIXED (a fixed number of billing cycles). [default: AUTO] </dd>
@@ -51,7 +52,7 @@ class Simplify_Plan extends SimplifyObject {
         $args = func_get_args();
         $authentication = SimplifyPaymentsApi::buildAuthenticationObject($authentication, $args, 2);
 
-        $instance = new Simplify_Plan();
+        $instance = new SimplifyPlan();
         $instance->setAll($hash);
 
         $object = SimplifyPaymentsApi::createObject($instance, $authentication);
@@ -62,7 +63,7 @@ class Simplify_Plan extends SimplifyObject {
 
 
        /**
-        * Deletes an Simplify_Plan object.
+        * Deletes an SimplifyPlan object.
         *
         * @param     $authentication -  information used for the API call.  If no value is passed the global keys Simplify::public_key and Simplify::private_key are used.  <i>For backwards compatibility the public and private keys may be passed instead of the authentication object.</i>
         */
@@ -78,7 +79,7 @@ class Simplify_Plan extends SimplifyObject {
 
 
        /**
-        * Retrieve Simplify_Plan objects.
+        * Retrieve SimplifyPlan objects.
         * @param     array criteria a map of parameters; valid keys are:<dl style="padding-left:10px;">
         *     <dt><tt>filter</tt></dt>    <dd><table class="filter_list"><tr><td>filter.id</td><td>Filter by the plan Id</td></tr><tr><td>filter.text</td><td>Filter by the name of the plan</td></tr><tr><td>filter.frequency</td><td>Filter by the frequency of the plan</td></tr><tr><td>filter.amountMin & filter.amountMax</td><td>The filter amountMin must be used with amountMax to find plans with plan values between the min and max figures</td></tr><tr><td>filter.dateCreatedMin<sup>*</sup></td><td>Filter by the minimum created date you are searching for - Date in UTC millis</td></tr><tr><td>filter.dateCreatedMax<sup>*</sup></td><td>Filter by the maximum created date you are searching for - Date in UTC millis</td></tr><tr><td>filter.q</td><td>You can use this to filter by the Id, the name or the amount of the plan</td></tr></table><br><sup>*</sup>Use dateCreatedMin with dateCreatedMax in the same filter if you want to search between two created dates  </dd>
         *     <dt><tt>max</tt></dt>    <dd>Allows up to a max of 50 list items to return. [min value: 0, max value: 50, default: 20]  </dd>
@@ -94,7 +95,7 @@ class Simplify_Plan extends SimplifyObject {
             $args = func_get_args();
             $authentication = SimplifyPaymentsApi::buildAuthenticationObject($authentication, $args, 2);
 
-            $val = new Simplify_Plan();
+            $val = new SimplifyPlan();
             $list = SimplifyPaymentsApi::listObject($val, $criteria, $authentication);
 
             return $list;
@@ -102,7 +103,7 @@ class Simplify_Plan extends SimplifyObject {
 
 
         /**
-         * Retrieve a Simplify_Plan object from the API
+         * Retrieve a SimplifyPlan object from the API
          *
          * @param     string id  the id of the Plan object to retrieve
          * @param     $authentication -  information used for the API call.  If no value is passed the global keys Simplify::public_key and Simplify::private_key are used.  <i>For backwards compatibility the public and private keys may be passed instead of the authentication object.</i>
@@ -113,7 +114,7 @@ class Simplify_Plan extends SimplifyObject {
             $args = func_get_args();
             $authentication = SimplifyPaymentsApi::buildAuthenticationObject($authentication, $args, 2);
 
-            $val = new Simplify_Plan();
+            $val = new SimplifyPlan();
             $val->id = $id;
 
             $obj = SimplifyPaymentsApi::findObject($val, $authentication);
@@ -123,7 +124,7 @@ class Simplify_Plan extends SimplifyObject {
 
 
         /**
-         * Updates an Simplify_Plan object.
+         * Updates an SimplifyPlan object.
          *
          * The properties that can be updated:
          * <dl style="padding-left:10px;">

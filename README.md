@@ -1,5 +1,5 @@
 # RAK - Simplify 
-## Rak payment gateway - Laravel Package
+## Simplify payment gateway - Laravel Package
 
 And of course Dillinger itself is open source with a [public repository][dill]
  on GitHub.
@@ -7,7 +7,7 @@ And of course Dillinger itself is open source with a [public repository][dill]
 ## Installation
 
 ```sh
-composer require rakbank/simplify
+composer require rak/simplify
 ```
 
 ## Usage
@@ -19,7 +19,7 @@ Here we will show how to authorize a card payment using a card token similar to 
 
 Use the namespace of your installed package on your class:
 ```sh
-use RakBank\Simplify\Simplify;
+use Rak\Simplify\Simplify;
 ```
 
 After getting the card token create auth using below code:

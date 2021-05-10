@@ -26,7 +26,7 @@
  * SUCH DAMAGE.
  */
 
-namespace RakBank\Simplify\SimplifyFiles;
+namespace Rak\Simplify\SimplifyFiles;
 
 /**
  * Base class for all domain objects.
