@@ -25,10 +25,10 @@
  * IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF 
  * SUCH DAMAGE.
  */
-namespace RakBank\Simplify\SimplifyFiles;
+namespace Rak\Simplify\SimplifyFiles;
 
-use RakBank\Simplify\SimplifyFiles\SimplifyObject;
-use RakBank\Simplify\SimplifyFiles\SimplifyPaymentsApi;
+use Rak\Simplify\SimplifyFiles\SimplifyObject;
+use Rak\Simplify\SimplifyFiles\SimplifyPaymentsApi;
 
 class SimplifyAuthorization extends SimplifyObject {
     /**

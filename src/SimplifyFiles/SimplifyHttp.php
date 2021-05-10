@@ -26,9 +26,9 @@
  * SUCH DAMAGE.
  */
 
-namespace RakBank\Simplify\SimplifyFiles;
+namespace Rak\Simplify\SimplifyFiles;
 
-use RakBank\Simplify\Simplify;
+use Rak\Simplify\Simplify;
 use InvalidArgumentException;
 use Simplify_AuthenticationException;
 use Simplify_BadRequestException;

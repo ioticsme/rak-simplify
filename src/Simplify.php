@@ -26,16 +26,16 @@
  * SUCH DAMAGE.
  */
 
-namespace RakBank\Simplify;
+namespace Rak\Simplify;
 
-use RakBank\Simplify\SimplifyFiles\SimplifyConstants;
-use RakBank\Simplify\SimplifyFiles\SimplifyAuthorization;
-use RakBank\Simplify\SimplifyFiles\SimplifyCoupon;
-use RakBank\Simplify\SimplifyFiles\SimplifyCustomer;
-use RakBank\Simplify\SimplifyFiles\SimplifyPayment;
-use RakBank\Simplify\SimplifyFiles\SimplifyPlan;
-use RakBank\Simplify\SimplifyFiles\SimplifyRefund;
-use RakBank\Simplify\SimplifyFiles\SimplifySubscription;
+use Rak\Simplify\SimplifyFiles\SimplifyConstants;
+use Rak\Simplify\SimplifyFiles\SimplifyAuthorization;
+use Rak\Simplify\SimplifyFiles\SimplifyCoupon;
+use Rak\Simplify\SimplifyFiles\SimplifyCustomer;
+use Rak\Simplify\SimplifyFiles\SimplifyPayment;
+use Rak\Simplify\SimplifyFiles\SimplifyPlan;
+use Rak\Simplify\SimplifyFiles\SimplifyRefund;
+use Rak\Simplify\SimplifyFiles\SimplifySubscription;
 
 // require_once(dirname(__FILE__) . '/SimplifyFiles/Constants.php');
 

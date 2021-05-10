@@ -25,7 +25,7 @@
  * IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF 
  * SUCH DAMAGE.
  */
-namespace RakBank\Simplify\SimplifyFiles;
+namespace Rak\Simplify\SimplifyFiles;
 /**
  * Simplify_Authentication - encapsulates the credentials needed to make a request to the Simplify API.
  *

@@ -26,7 +26,7 @@
  * SUCH DAMAGE.
  */
 
-namespace RakBank\Simplify\SimplifyFiles;
+namespace Rak\Simplify\SimplifyFiles;
 
 /**
  * Constant values.

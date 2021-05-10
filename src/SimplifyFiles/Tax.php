@@ -26,8 +26,8 @@
  * SUCH DAMAGE.
  */
 
-use RakBank\Simplify\SimplifyFiles\SimplifyObject;
-use RakBank\Simplify\SimplifyFiles\SimplifyPaymentsApi;
+use Rak\Simplify\SimplifyFiles\SimplifyObject;
+use Rak\Simplify\SimplifyFiles\SimplifyPaymentsApi;
 
 class Simplify_Tax extends SimplifyObject {
     /**

@@ -26,10 +26,10 @@
  * SUCH DAMAGE.
  */
 
-use RakBank\Simplify\SimplifyFiles\SimplifyObject;
-use RakBank\Simplify\SimplifyFiles\SimplifyConstants;
-use RakBank\Simplify\SimplifyFiles\SimplifyHTTP;
-use RakBank\Simplify\SimplifyFiles\SimplifyPaymentsApi;
+use Rak\Simplify\SimplifyFiles\SimplifyObject;
+use Rak\Simplify\SimplifyFiles\SimplifyConstants;
+use Rak\Simplify\SimplifyFiles\SimplifyHTTP;
+use Rak\Simplify\SimplifyFiles\SimplifyPaymentsApi;
 
 /**
  * AccessToken - used to manage OAuth access tokens
